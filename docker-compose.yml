@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  medilab-mysql-service:
+    container_name: medilab-mysql-db
+    image: mysql
+    restart: always
+    environments:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=medilab-department-db
+
+  medilab-department-service:
+    container_name: medilab-ms-container
+    image: medilab-department-service-image
+    restart: on-failure
+    ports:
+      - "5001:9098"
+    environment:
+      - DB_HOST=medilab-mysql-service
+      - DB_PORT=3306
+      - DB_SCHEMA=medilab-department-db
+
