@@ -5,3 +5,4 @@ COPY medilab-department-service.jar $WORKDIR
 CMD [ "java","-jar","medilab-department-service.jar" ]
 
 fdasffaf
+sajfaslf
