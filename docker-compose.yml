@@ -18,4 +18,5 @@ services:
       - DB_HOST=medilab-mysql-service
       - DB_PORT=3306
       - DB_SCHEMA=medilab-department-db
+      #test
 
